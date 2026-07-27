@@ -1,14 +1,20 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import logoAsset from "@/assets/auge-logo.png.asset.json";
-import heroAsset from "@/assets/auge-hero.png.asset.json";
-const heroImg = heroAsset.url;
-import bbqImg from "@/assets/bbq-close.jpg";
-import stageImg from "@/assets/stage.jpg";
-import barImg from "@/assets/bar.jpg";
-import vipImg from "@/assets/vip.jpg";
-import carsImg from "@/assets/cars.jpg";
-import trucksImg from "@/assets/foodtrucks.jpg";
+import entradaAsset from "@/assets/auge-entrada.webp.asset.json";
+import palcoAsset from "@/assets/auge-palco.webp.asset.json";
+import barAsset from "@/assets/auge-bar.webp.asset.json";
+import vipAsset from "@/assets/auge-vip.webp.asset.json";
+import foodtrucksAsset from "@/assets/auge-foodtrucks.webp.asset.json";
+import bbqAsset from "@/assets/auge-bbq.webp.asset.json";
+import carsAsset from "@/assets/auge-cars.webp.asset.json";
+const heroImg = entradaAsset.url;
+const bbqImg = bbqAsset.url;
+const stageImg = palcoAsset.url;
+const barImg = barAsset.url;
+const vipImg = vipAsset.url;
+const carsImg = carsAsset.url;
+const trucksImg = foodtrucksAsset.url;
 
 export const Route = createFileRoute("/")({
   component: Landing,
