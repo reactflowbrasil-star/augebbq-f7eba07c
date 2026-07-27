@@ -19,11 +19,11 @@ export const Route = createFileRoute("/")({
         content:
           "AUGE BBQ: o maior encontro de churrasco, música e experiências de marca de Rio Verde. Apresentação comercial para patrocinadores — 17 e 18 de Outubro no Buriti Shopping.",
       },
-      { property: "og:title", content: "AUGE BBQ — Cotas de Patrocínio 2026" },
+      { property: "og:title", content: "AUGE BBQ 2026 — Patrocínios | 17 e 18 de Outubro · Rio Verde-GO" },
       {
         property: "og:description",
         content:
-          "Dois dias conectando grandes marcas, consumidores e experiências inesquecíveis. Solicite a proposta comercial.",
+          "AUGE BBQ: o maior encontro de churrasco, música e experiências de marca de Rio Verde. Apresentação comercial para patrocinadores — 17 e 18 de Outubro no Buriti Shopping.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
