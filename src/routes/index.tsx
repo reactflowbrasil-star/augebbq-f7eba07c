@@ -1,20 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import logoAsset from "@/assets/auge-logo.png.asset.json";
-import entradaAsset from "@/assets/auge-entrada.webp.asset.json";
-import palcoAsset from "@/assets/auge-palco.webp.asset.json";
-import barAsset from "@/assets/auge-bar.webp.asset.json";
-import vipAsset from "@/assets/auge-vip.webp.asset.json";
-import foodtrucksAsset from "@/assets/auge-foodtrucks.webp.asset.json";
-import bbqAsset from "@/assets/auge-bbq.webp.asset.json";
-import carsAsset from "@/assets/auge-cars.webp.asset.json";
-const heroImg = entradaAsset.url;
-const bbqImg = bbqAsset.url;
-const stageImg = palcoAsset.url;
-const barImg = barAsset.url;
-const vipImg = vipAsset.url;
-const carsImg = carsAsset.url;
-const trucksImg = foodtrucksAsset.url;
+const heroImg = "/assets/hero-aerial.jpg";
+const bbqImg = "/assets/bbq-close.jpg";
+const stageImg = "/assets/stage.jpg";
+const barImg = "/assets/bar.jpg";
+const vipImg = "/assets/vip.jpg";
+const carsImg = "/assets/cars.jpg";
+const trucksImg = "/assets/foodtrucks.jpg";
 
 export const Route = createFileRoute("/")({
   component: Landing,
@@ -40,12 +32,13 @@ export const Route = createFileRoute("/")({
 });
 
 const Logo = ({ className = "h-10 w-10" }: { className?: string }) => (
-  <img
-    src={logoAsset.url}
-    alt="AUGE BBQ"
-    className={className}
+  <div
+    aria-label="AUGE BBQ"
+    className={`${className} flex shrink-0 items-center justify-center rounded-full border border-primary/45 bg-black/70 font-display text-[0.68rem] leading-none tracking-wider text-gradient-gold`}
     style={{ filter: "drop-shadow(0 6px 20px rgba(255,106,0,0.35))" }}
-  />
+  >
+    AUGE
+  </div>
 );
 
 const Embers = () => (
