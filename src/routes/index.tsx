@@ -233,12 +233,42 @@ function Section({
 }
 
 function About() {
+  const [activeCard, setActiveCard] = useState(0);
   const cards = [
-    { icon: "🔥", t: "Churrasco Premium", d: "Experiência gastronômica com grandes especialistas do fogo e da brasa." },
-    { icon: "🎤", t: "Shows Sertanejos", d: "Música e entretenimento em grande estrutura de palco e produção." },
-    { icon: "🥩", t: "Gastronomia", d: "Carnes premium, carnes exóticas e experiências gastronômicas exclusivas." },
-    { icon: "⭐", t: "Área VIP", d: "Camarote, relacionamento corporativo e experiências premium." },
+    {
+      icon: "🔥",
+      t: "Churrasco Premium",
+      d: "Experiência gastronômica com grandes especialistas do fogo e da brasa.",
+      details:
+        "Esta frente concentra estações de preparo ao vivo, cortes nobres, pitmasters convidados e ativações ligadas ao ritual do fogo. É o ponto de maior conexão sensorial do evento, ideal para marcas que querem associar presença, aroma, sabor e experiência memorável.",
+      highlights: ["Cortes nobres preparados ao vivo", "Chefs e especialistas em fogo", "Conteúdo visual para redes sociais"],
+    },
+    {
+      icon: "🎤",
+      t: "Shows Sertanejos",
+      d: "Música e entretenimento em grande estrutura de palco e produção.",
+      details:
+        "A programação musical cria permanência, fluxo e energia para os dois dias de evento. O palco permite exposição de marca em painéis, chamadas do mestre de cerimônias, ativações de intervalo e associação direta com o entretenimento regional.",
+      highlights: ["Palco com grande estrutura de produção", "Momentos de alta concentração de público", "Branding integrado ao entretenimento"],
+    },
+    {
+      icon: "🥩",
+      t: "Gastronomia",
+      d: "Carnes premium, carnes exóticas e experiências gastronômicas exclusivas.",
+      details:
+        "A curadoria gastronômica reúne carnes premium, carnes exóticas, acompanhamentos especiais e experiências de degustação. O foco é entregar descoberta, exclusividade e valor percebido para um público que busca sabores diferentes e momentos compartilháveis.",
+      highlights: ["Carnes premium e cortes especiais", "Carnes exóticas com curadoria", "Degustações e experiências exclusivas"],
+    },
+    {
+      icon: "⭐",
+      t: "Área VIP",
+      d: "Camarote, relacionamento corporativo e experiências premium.",
+      details:
+        "A Área VIP foi pensada para relacionamento estratégico, convidados especiais e hospitalidade corporativa. O espaço fortalece networking, recepção de clientes e conversas comerciais em um ambiente confortável, reservado e com percepção premium.",
+      highlights: ["Hospitalidade para convidados e clientes", "Ambiente reservado para networking", "Experiência premium de marca"],
+    },
   ];
+  const active = cards[activeCard];
   return (
     <Section
       id="sobre"
@@ -252,10 +282,16 @@ function About() {
       subtitle="O AUGE BBQ transforma o estacionamento do Buriti Shopping em uma experiência completa de gastronomia, entretenimento e relacionamento — conectando marcas e consumidores em um dos maiores encontros do Centro-Oeste."
     >
       <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-        {cards.map((c) => (
-          <div
+        {cards.map((c, i) => (
+          <button
             key={c.t}
-            className="glass-card group relative overflow-hidden rounded-3xl p-7 transition-transform hover:-translate-y-1"
+            type="button"
+            aria-expanded={activeCard === i}
+            aria-controls="about-card-details"
+            onClick={() => setActiveCard(i)}
+            className={`glass-card group relative min-h-52 overflow-hidden rounded-3xl p-7 text-left transition hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/70 ${
+              activeCard === i ? "gold-border" : ""
+            }`}
           >
             <div className="text-4xl">{c.icon}</div>
             <h3 className="mt-4 font-display text-2xl tracking-wide text-gold-soft">{c.t}</h3>
@@ -264,8 +300,28 @@ function About() {
               className="pointer-events-none absolute -bottom-8 -right-8 h-32 w-32 rounded-full opacity-0 blur-2xl transition-opacity group-hover:opacity-60"
               style={{ background: "radial-gradient(circle, #FF6A00, transparent 70%)" }}
             />
-          </div>
+          </button>
         ))}
+      </div>
+      <div id="about-card-details" className="glass-card mt-6 rounded-3xl p-6 md:p-8">
+        <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
+          <div className="max-w-3xl">
+            <div className="text-4xl">{active.icon}</div>
+            <h3 className="mt-4 font-display text-3xl tracking-wide text-gradient-gold">
+              {active.t}
+            </h3>
+            <p className="mt-4 text-base leading-relaxed text-muted-foreground md:text-lg">
+              {active.details}
+            </p>
+          </div>
+          <div className="grid min-w-0 gap-3 md:w-80">
+            {active.highlights.map((item) => (
+              <div key={item} className="gold-border rounded-2xl px-4 py-3 text-sm text-gold-soft">
+                {item}
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </Section>
   );
