@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 const heroImg = "/assets/hero-aerial.jpg";
+const heroVideo = "/assets/hero-event.mp4";
 const bbqImg = "/assets/bbq-close.jpg";
 const stageImg = "/assets/stage.jpg";
 const barImg = "/assets/bar.jpg";
@@ -96,9 +97,15 @@ function Hero() {
   return (
     <section className="relative min-h-[100svh] overflow-hidden pt-24">
       <div className="absolute inset-0">
-        <img
-          src={heroImg}
-          alt="Visão aérea do AUGE BBQ no Buriti Shopping"
+        <video
+          src={heroVideo}
+          poster={heroImg}
+          aria-label="Vídeo realista do evento AUGE BBQ"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
           className="h-full w-full object-cover"
           style={{ filter: "brightness(0.55) saturate(1.1) contrast(1.05)" }}
         />
