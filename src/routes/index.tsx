@@ -236,7 +236,7 @@ function About() {
   const cards = [
     { icon: "🔥", t: "Churrasco Premium", d: "Experiência gastronômica com grandes especialistas do fogo e da brasa." },
     { icon: "🎤", t: "Shows Sertanejos", d: "Música e entretenimento em grande estrutura de palco e produção." },
-    { icon: "🍻", t: "Gastronomia", d: "Food trucks, bares premium e espaços gastronômicos exclusivos." },
+    { icon: "🥩", t: "Gastronomia", d: "Carnes premium, carnes exóticas e experiências gastronômicas exclusivas." },
     { icon: "⭐", t: "Área VIP", d: "Camarote, relacionamento corporativo e experiências premium." },
   ];
   return (
