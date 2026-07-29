@@ -186,3 +186,23 @@
 @utility animate-fade-up {
   animation: fade-up 0.8s ease-out both;
 }
+
+@keyframes proposal-ticker {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.proposal-ticker-track {
+  animation: proposal-ticker 24s linear infinite;
+  will-change: transform;
+}
+
+.proposal-ticker-track:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .proposal-ticker-track {
+    animation: none;
+  }
+}

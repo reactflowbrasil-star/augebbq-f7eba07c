@@ -62,9 +62,34 @@ const Embers = () => (
   </div>
 );
 
+function ProposalTicker() {
+  const messages = Array.from({ length: 8 }, (_, index) => (
+    <span key={index} className="flex items-center gap-5 whitespace-nowrap">
+      <span>Solicite uma proposta</span>
+      <span aria-hidden="true" className="text-black/55">✦</span>
+    </span>
+  ));
+
+  return (
+    <a
+      href="#contato"
+      aria-label="Solicite uma proposta comercial"
+      className="group block overflow-hidden border-b border-white/15 bg-gold-gradient py-2 text-black shadow-[0_6px_24px_rgba(255,106,0,0.25)]"
+    >
+      <div className="proposal-ticker-track flex w-max items-center font-display text-sm uppercase tracking-[0.22em] md:text-base">
+        <div className="flex shrink-0 items-center gap-5 pr-5">{messages}</div>
+        <div aria-hidden="true" className="flex shrink-0 items-center gap-5 pr-5">
+          {messages}
+        </div>
+      </div>
+    </a>
+  );
+}
+
 function Nav() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
+      <ProposalTicker />
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:px-8">
         <div className="glass-card flex items-center gap-3 rounded-full px-3 py-2 pr-5">
           <Logo className="h-9 w-9" />
@@ -95,7 +120,7 @@ function Nav() {
 
 function Hero() {
   return (
-    <section className="relative min-h-[100svh] overflow-hidden pt-24">
+    <section className="relative min-h-[100svh] overflow-hidden pt-32">
       <div className="absolute inset-0">
         <video
           src={heroVideo}
