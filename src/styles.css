@@ -192,6 +192,11 @@
   to { transform: translateX(-50%); }
 }
 
+.proposal-ticker-shell {
+  transform: rotate(-0.35deg) scale(1.015);
+  transform-origin: center;
+}
+
 .proposal-ticker-track {
   animation: proposal-ticker 24s linear infinite;
   will-change: transform;
