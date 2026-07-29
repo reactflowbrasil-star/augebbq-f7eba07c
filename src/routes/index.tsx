@@ -13,17 +13,17 @@ export const Route = createFileRoute("/")({
   component: Landing,
   head: () => ({
     meta: [
-      { title: "AUGE BBQ 2026 — Patrocínios | 17 e 18 de Outubro · Rio Verde-GO" },
+      { title: "AUGE BBQ 2026 — Patrocínios | 17 de Outubro · Rio Verde-GO" },
       {
         name: "description",
         content:
-          "AUGE BBQ: o maior encontro de churrasco, música e experiências de marca de Rio Verde. Apresentação comercial para patrocinadores — 17 e 18 de Outubro no Buriti Shopping.",
+          "AUGE BBQ: o maior encontro de churrasco, música e experiências de marca de Rio Verde. Apresentação comercial para patrocinadores — 17 de Outubro no Buriti Shopping.",
       },
-      { property: "og:title", content: "AUGE BBQ 2026 — Patrocínios | 17 e 18 de Outubro · Rio Verde-GO" },
+      { property: "og:title", content: "AUGE BBQ 2026 — Patrocínios | 17 de Outubro · Rio Verde-GO" },
       {
         property: "og:description",
         content:
-          "AUGE BBQ: o maior encontro de churrasco, música e experiências de marca de Rio Verde. Apresentação comercial para patrocinadores — 17 e 18 de Outubro no Buriti Shopping.",
+          "AUGE BBQ: o maior encontro de churrasco, música e experiências de marca de Rio Verde. Apresentação comercial para patrocinadores — 17 de Outubro no Buriti Shopping.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -142,7 +142,7 @@ function Hero() {
 
           <div className="mx-auto mt-6 flex flex-wrap items-center justify-center gap-3 text-sm md:text-base">
             <span className="gold-border rounded-full px-4 py-1.5 font-semibold tracking-wider">
-              17 & 18 DE OUTUBRO
+              17 DE OUTUBRO
             </span>
             <span className="gold-border rounded-full px-4 py-1.5 tracking-wider">
               BURITI SHOPPING
@@ -751,7 +751,7 @@ function ContactForm() {
                 <div className="font-display text-2xl tracking-wider text-gradient-gold">
                   AUGE BBQ
                 </div>
-                <div className="text-muted-foreground">17 e 18 de Outubro</div>
+                <div className="text-muted-foreground">17 de Outubro</div>
                 <div className="text-muted-foreground">
                   Estacionamento do Buriti Shopping
                 </div>
