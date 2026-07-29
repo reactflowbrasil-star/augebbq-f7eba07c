@@ -2,12 +2,12 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 const heroImg = "/assets/hero-aerial.jpg";
 const heroVideo = "/assets/hero-event.mp4";
-const bbqImg = "/assets/bbq-close.jpg";
-const stageImg = "/assets/stage.jpg";
-const barImg = "/assets/bar.jpg";
-const vipImg = "/assets/vip.jpg";
-const carsImg = "/assets/cars.jpg";
-const trucksImg = "/assets/foodtrucks.jpg";
+const bbqImg = "/assets/gallery/area-patrocinadores.png";
+const stageImg = "/assets/gallery/palco-principal.png";
+const barImg = "/assets/gallery/bar-premium.png";
+const vipImg = "/assets/gallery/camarote-vip.png";
+const carsImg = "/assets/gallery/exposicao-automotiva.png";
+const trucksImg = "/assets/gallery/food-trucks.png";
 
 export const Route = createFileRoute("/")({
   component: Landing,
@@ -328,7 +328,7 @@ function Structure() {
             <div className="aspect-[4/5] overflow-hidden">
               <img
                 src={it.img}
-                alt={it.t}
+                alt={`${it.t} no AUGE BBQ — ${it.d}`}
                 loading="lazy"
                 className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                 style={{ filter: "brightness(0.75) saturate(1.1)" }}
@@ -688,26 +688,81 @@ function Audience() {
 }
 
 function Gallery() {
-  const imgs = [heroImg, bbqImg, stageImg, barImg, vipImg, trucksImg];
+  const gallery = [
+    {
+      src: "/assets/gallery/entrada-principal.png",
+      title: "Entrada Principal",
+      description: "Portal de boas-vindas com a identidade AUGE BBQ e espaços de destaque para marcas parceiras.",
+      layout: "md:col-span-2 md:row-span-2",
+    },
+    {
+      src: "/assets/gallery/palco-principal.png",
+      title: "Palco Principal",
+      description: "Shows sertanejos, grande estrutura de produção e alta concentração de público.",
+    },
+    {
+      src: "/assets/gallery/bar-premium.png",
+      title: "Bar Premium",
+      description: "Operação de bebidas integrada ao evento, com ambientação exclusiva e exposição de marca.",
+    },
+    {
+      src: "/assets/gallery/camarote-vip.png",
+      title: "Camarote VIP",
+      description: "Lounge reservado para convidados, relacionamento corporativo e experiências premium.",
+    },
+    {
+      src: "/assets/gallery/food-trucks.png",
+      title: "Corredor de Food Trucks",
+      description: "Operações gastronômicas variadas em uma área de circulação, convivência e consumo.",
+    },
+    {
+      src: "/assets/gallery/exposicao-automotiva.png",
+      title: "Exposição Automotiva",
+      description: "Veículos em evidência com test drive, lançamentos e ativações de alto impacto.",
+    },
+    {
+      src: "/assets/gallery/area-patrocinadores.png",
+      title: "Espaço dos Patrocinadores",
+      description: "Totens, painéis e ativações inseridos no coração da experiência de churrasco e entretenimento.",
+    },
+    {
+      src: "/assets/gallery/planta-evento.png",
+      title: "Planta Geral do Evento",
+      description: "Visão completa da entrada, palco, área BBQ, bar, food trucks, camarote VIP e espaços de patrocinadores.",
+      layout: "col-span-2 md:col-span-3",
+      contain: true,
+    },
+  ];
   return (
     <Section
       eyebrow="Galeria"
       title={<>Uma <span className="text-gradient-gold">produção</span> que gera conteúdo.</>}
     >
-      <div className="grid grid-cols-2 gap-3 md:grid-cols-3">
-        {imgs.map((src, i) => (
-          <div
-            key={i}
-            className={`overflow-hidden rounded-2xl ${i === 0 ? "col-span-2 row-span-2" : ""}`}
+      <div className="grid grid-cols-2 gap-3 md:auto-rows-[22rem] md:grid-cols-3">
+        {gallery.map((item) => (
+          <figure
+            key={item.title}
+            className={`group relative min-h-72 overflow-hidden rounded-2xl border border-primary/20 bg-black ${
+              item.layout ?? ""
+            }`}
           >
             <img
-              src={src}
-              alt=""
+              src={item.src}
+              alt={`${item.title} no AUGE BBQ — ${item.description}`}
               loading="lazy"
-              className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
-              style={{ minHeight: i === 0 ? 400 : 200 }}
+              className={`h-full w-full transition-transform duration-700 group-hover:scale-105 ${
+                item.contain ? "object-contain" : "object-cover"
+              }`}
             />
-          </div>
+            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/80 to-transparent px-4 pb-4 pt-16 md:px-5 md:pb-5">
+              <h3 className="font-display text-xl tracking-wide text-gold-soft md:text-2xl">
+                {item.title}
+              </h3>
+              <figcaption className="mt-1 text-xs leading-relaxed text-white/75 md:text-sm">
+                {item.description}
+              </figcaption>
+            </div>
+          </figure>
         ))}
       </div>
     </Section>
