@@ -811,6 +811,22 @@ function ContactForm() {
                   Estacionamento do Buriti Shopping
                 </div>
                 <div className="text-muted-foreground">Rio Verde · Goiás</div>
+                <div className="mt-4 border-t border-border/60 pt-4">
+                  <a
+                    href="https://wa.me/5561982286650"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="block text-gold-soft transition-colors hover:text-primary"
+                  >
+                    WhatsApp: (61) 98228-6650
+                  </a>
+                  <a
+                    href="mailto:augebbq@gmail.com"
+                    className="mt-2 block text-gold-soft transition-colors hover:text-primary"
+                  >
+                    augebbq@gmail.com
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -923,8 +939,24 @@ function Footer() {
             <div className="text-xs">© {new Date().getFullYear()} · Todos os direitos reservados</div>
           </div>
         </div>
-        <div className="text-xs uppercase tracking-widest">
-          Rio Verde · Goiás · Brasil
+        <div className="flex flex-col items-center gap-2 text-xs tracking-wider md:items-end">
+          <div className="uppercase tracking-widest">Rio Verde · Goiás · Brasil</div>
+          <div className="flex flex-wrap justify-center gap-x-4 gap-y-1 md:justify-end">
+            <a
+              href="https://wa.me/5561982286650"
+              target="_blank"
+              rel="noreferrer"
+              className="transition-colors hover:text-primary"
+            >
+              WhatsApp: (61) 98228-6650
+            </a>
+            <a
+              href="mailto:augebbq@gmail.com"
+              className="transition-colors hover:text-primary"
+            >
+              augebbq@gmail.com
+            </a>
+          </div>
         </div>
       </div>
     </footer>
