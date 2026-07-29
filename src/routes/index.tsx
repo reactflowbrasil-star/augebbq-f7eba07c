@@ -418,63 +418,66 @@ function Opportunities() {
 function Quotas() {
   const quotas = [
     {
-      tag: "🔥",
-      name: "AUGE Master",
-      lead: "Maior exposição do evento",
+      tag: "🥈",
+      name: "Prata",
+      lead: "Visibilidade ampliada e contato com o público",
+      description:
+        "Para marcas que desejam fortalecer presença no evento e realizar ações de relacionamento com boa exposição.",
+      benefits: [
+        "Logo em materiais oficiais do evento",
+        "Aplicação de marca em painel compartilhado",
+        "Espaço para ativação ou sampling",
+        "Divulgação nas redes sociais",
+        "Menção na comunicação institucional",
+        "Credenciais para relacionamento",
+      ],
+    },
+    {
+      tag: "🥉",
+      name: "Bronze",
+      lead: "Presença institucional no AUGE BBQ",
+      description:
+        "Uma porta de entrada para empresas que querem associar sua marca ao evento e participar de sua comunicação.",
+      benefits: [
+        "Logo na comunicação institucional",
+        "Presença em painel coletivo de marcas",
+        "Inclusão no site e materiais digitais",
+        "Menção de agradecimento nas redes sociais",
+        "Credenciais de acesso ao evento",
+      ],
+    },
+    {
+      tag: "🥇",
+      name: "Ouro",
+      lead: "Alta visibilidade e ativação de marca",
+      description:
+        "Indicada para marcas que buscam protagonismo, experiências próprias e relacionamento qualificado durante o evento.",
+      benefits: [
+        "Logo em posição de destaque",
+        "Totem ou painel exclusivo de marca",
+        "Espaço personalizado para ativação",
+        "Menções durante a programação do palco",
+        "Conteúdo dedicado nas redes sociais",
+        "Hospitalidade para clientes e convidados",
+        "Possibilidade de exposição de produtos",
+      ],
+    },
+    {
+      tag: "💎",
+      name: "Diamante",
+      lead: "Máxima exposição e protagonismo",
+      description:
+        "A principal cota do AUGE BBQ, criada para posicionar a marca no centro da experiência e garantir presença premium.",
       highlight: true,
       benefits: [
-        "Patrocinador principal",
-        "Maior destaque visual",
-        "Logo no palco e entrada",
-        "Naming de espaços",
-        "Camarote corporativo",
-        "Ativações exclusivas",
-        "Totens premium",
-      ],
-    },
-    {
-      tag: "🥩",
-      name: "Premium",
-      lead: "Alta visibilidade e ativação",
-      benefits: [
-        "Espaço personalizado",
-        "Banners internos",
-        "Totens exclusivos",
-        "Comunicação visual",
-        "Ativação de marca",
-      ],
-    },
-    {
-      tag: "🚗",
-      name: "Mobilidade",
-      lead: "Especial para montadoras",
-      benefits: [
-        "Exposição de veículos",
-        "Área exclusiva",
-        "Test drive",
-        "Conteúdo digital",
-        "Experiência com público",
-      ],
-    },
-    {
-      tag: "⭐",
-      name: "Experience",
-      lead: "Interação direta com o público",
-      benefits: [
-        "Espaço promocional",
-        "Sampling",
-        "Interação com consumidores",
-        "Divulgação institucional",
-      ],
-    },
-    {
-      tag: "🤝",
-      name: "Apoio",
-      lead: "Presença institucional",
-      benefits: [
-        "Presença de marca",
-        "Comunicação institucional",
-        "Divulgação digital",
+        "Status de patrocinador principal",
+        "Maior destaque na entrada e no palco",
+        "Naming de espaço estratégico",
+        "Área exclusiva para grande ativação",
+        "Presença premium em toda a comunicação",
+        "Conteúdo digital exclusivo",
+        "Camarote e hospitalidade corporativa",
+        "Exclusividade por segmento negociável",
       ],
     },
   ];
@@ -486,7 +489,7 @@ function Quotas() {
       title={<>Escolha o nível de <span className="text-gradient-gold">exposição</span>.</>}
       subtitle="Formatos flexíveis, desenhados para gerar retorno comercial, mídia espontânea e experiência de marca de alto impacto."
     >
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-6 md:grid-cols-2">
         {quotas.map((q) => (
           <div
             key={q.name}
@@ -507,6 +510,9 @@ function Quotas() {
               {q.name}
             </h3>
             <p className="mt-1 text-sm text-foreground/80">{q.lead}</p>
+            <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+              {q.description}
+            </p>
 
             <ul className="mt-6 space-y-3 text-sm">
               {q.benefits.map((b) => (
@@ -801,7 +807,7 @@ function ContactForm() {
     empresa: "",
     telefone: "",
     email: "",
-    interesse: "Cota Master",
+    interesse: "Cota Diamante",
   });
 
   return (
@@ -912,8 +918,10 @@ function ContactForm() {
                     </label>
                     <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
                       {[
-                        "Cota Master",
-                        "Cota Premium",
+                        "Cota Bronze",
+                        "Cota Prata",
+                        "Cota Ouro",
+                        "Cota Diamante",
                         "Ativação de Marca",
                         "Exposição de Veículos",
                         "Espaço Gastronômico",
